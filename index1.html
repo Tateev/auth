@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Events </title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <button data-num="1" class="btn"> Click 1 </button>
+        <button data-num="2"  class="btn"> Click 2</button>
+        <button data-num="3"  class="btn"> Click 3</button>
+        <button data-num="4"  class="btn"> Click 4</button>
+    </div>
+    <!-- <script src="./dom.js"></script> -->
+
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+
+        const handleClick = (event )=> {
+                console.log("target", event.target)
+                console.log("currentTarget", event.currentTarget)
+                console.log(event.target  === event.currentTarget) 
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', handleClick)
+        })
+        
+
+    </script>
+</body>
+</html>
